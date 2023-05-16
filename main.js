@@ -50,9 +50,9 @@ function createRow(src, data) {
     
     
 
-    textContainer.innerHTML = fetch("https://github.com/adamllryan/Battleship/blob/main/README.md")
-    .then(a => a.json)
-    .then(a => atob(a.content));
+    // textContainer.innerHTML = fetch("https://github.com/adamllryan/Battleship/blob/main/README.md")
+    // .then(a => a.json)
+    // .then(a => atob(a.content));
 
 
     
