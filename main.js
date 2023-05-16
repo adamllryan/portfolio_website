@@ -2,42 +2,73 @@ const maxEntries = 10;
 const defaultImage = "https://github.com/adamllryan.png";
 const pathHeader = "https://github.com/adamllryan/";
 const jsonPath = "display-projects.json";
-import data from './display-projects.json';
-function populateRow(src, data) {
-    //image
+
+var projects = [
+    {
+        "order": "1",
+        "path": "autoclicker",
+        "imgsrc": ""
+    },
+    {
+        "order": "2",
+        "path": "battleship",
+        "imgsrc": ""
+    }
+]
+function createRow(src, data) {
+
+    let row = document.createElement("div");
+    row.classList.add("grid");
+    src.appendChild(row);
+
+    let imgContainer = document.createElement("div");
+    imgContainer.classList.add("project-img");
+    row.appendChild(imgContainer);
     let img = document.createElement("img");
-    let url = data.imgsrc;
-    if (url!="") {
-        img.src = url;
+    if (data.imgsrc !== "" && data.imgsrc !== undefined) {
+        img.src = data.imgsrc;
     } else {
         img.src = defaultImage;
     }
-    src.appendChild(img);
-    //title
+    imgContainer.appendChild(img);
+    
+    let content = document.createElement("div");
+    content.classList.add("content");
+    row.appendChild(content);
 
-    //description
-    return "";
-}
-function generateImage(url) {
+    //project title
+
+    let titleContainer = document.createElement("div");
+    titleContainer.classList.add("project-title");
+    titleContainer.innerHTML = "<a href=" + pathHeader + data.path + ">" + data.path+ "</a>";
+    content.appendChild(titleContainer);
+    
+    //project description
+
+    let textContainer = document.createElement("div");
+    textContainer.classList.add("project-text");
     
     
-    return img;
+
+    textContainer.innerHTML = fetch("https://github.com/adamllryan/Battleship/blob/main/README.md")
+    .then(a => a.json)
+    .then(a => atob(a.content));
+
+
+    
+    //textContainer.innerHTML = "text";
+
+    content.appendChild(textContainer);
+
 }
+
+
 function populateTable() {
     let rowCount = 0;
-    let isFinished = false;
     let table = document.getElementById("projects");
-    let projects = JSON.parse(data);// = JSON.parse(jsonData);
-    // fetch('./display-projects.json')
-    // //fetch('https://adamllryan.github.io/data/display-projects.json')
-    // .then(res => res.json())
-    // .then(json => {
-    //     projects = JSON.parse(json);
-    // });
-    
-    while (rowCount < maxEntries && rowCount < projects.count) {
-        let row = table.insertRow(rowCount);
-        row.innerHTML = populateRow(row, projects[rowCount]);
+    while (rowCount < maxEntries && rowCount < projects.length) {
+        console.log(rowCount+" row")
+        createRow(table, projects[rowCount]);
         rowCount++;
     }
 }

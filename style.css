@@ -5,9 +5,34 @@ body {
     text-align: center;
     color:darkslategrey;
 }
-.text-title {
+.title {
 
 }
-.text-content {
+.content {
 
+}
+div {
+    border-color: black;
+    border-width: 1px;
+    border-style: dashed;
+    border-radius: 25px;
+    padding: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    background-color: #8FBC8B;
+    gap: 10px;
+}
+a {
+    color: darkslategray;
+    text-decoration: none;
+}
+.title {
+    font-size: 18;
+}
+img {
+    height: 200px;
+    width: 200px;
 }
