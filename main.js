@@ -49,10 +49,11 @@ function createRow(src, data) {
     textContainer.classList.add("project-text");
     
     
-
-    // textContainer.innerHTML = fetch("https://github.com/adamllryan/Battleship/blob/main/README.md")
-    // .then(a => a.json)
-    // .then(a => atob(a.content));
+    if (data.description !== "" && data.description !== undefined) {
+        textContainer.innerHTML = data.description;
+    } else {
+        textContainer.innerHTML = "No description found. ";
+    }
 
 
     
