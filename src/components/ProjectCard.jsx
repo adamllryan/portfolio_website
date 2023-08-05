@@ -1,7 +1,10 @@
 import {React, useState, useEffect} from 'react'
 import Tags from './Tags'
 import Topics from './Topics'
-const Project = ( { projectData } ) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+
+const ProjectCard = ( { projectData } ) => {
     let [tags, setTags] = useState([])
     useEffect(() => {
         const fetchTags = async () => {
@@ -18,11 +21,14 @@ const Project = ( { projectData } ) => {
         fetchTags()
     }, [projectData.name])
     return (
-      <div className='justify-center align-middle content-center items-center'>
-        <div className='border-2 border-l-indigo-400 grid shadow-xl hover:shadow-2xl duration-300 hover:my-2.5 bg-slate-50  m-2 p-2 rounded-xl py-4 divide-y-2'>
+      <div className='z-50 justify-center align-middle content-center items-center'>
+        <div className='border-2 hover:border-l-4 border-l-indigo-400 grid shadow-xl hover:shadow-2xl duration-300 hover:my-2.5 bg-slate-50  m-2 p-2 rounded-xl py-4 divide-y-2'>
             <div className='flex items-baseline gap-2 pl-2 rounded-t-lg'>
                 <a target='_blank' rel="noopener noreferrer" href={projectData.html_url}>
-                    {projectData.name}
+                    <FontAwesomeIcon className='text-indigo-500' icon={faGithub}/>
+                    <label className='m-16>'>
+                        {projectData.name}
+                    </label>
                 </a>
                 <div className='text-indigo-500 text-xs shadow-xl'>
                     {projectData.language? `(${projectData.language})` : null}
@@ -46,4 +52,4 @@ const Project = ( { projectData } ) => {
     )
 }
 
-export default Project;
+export default ProjectCard;
