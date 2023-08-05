@@ -22,7 +22,7 @@ function App() {
     fetchProjects()
   }, [])
   return (
-    <div className='bg-slate-100 font-mono p-4'>
+    <div className='grid bg-slate-100 font-mono p-4 place-items-center'>
       <Header />
       <Description />
       <ProjectsPanel projects={projects} />

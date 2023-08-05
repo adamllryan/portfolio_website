@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='p-4 bg-slate-100 rounded-xl shadow-xl border-slate-200 border-2'>
+    <div className='w-screen max-w-4xl p-4 bg-slate-100 rounded-xl shadow-xl border-slate-200 border-2'>
         {/* Title */}
         <div className='text-center'>
             Adam Ryan
@@ -10,7 +10,7 @@ const Header = () => {
         {/* Hyperinks */}
         <div className='flex justify-center items-center text-xs text-slate-600 py-4'>
             <a className='group transition duration-200 font-semibold' href='mailto:adam@ry3.io'>
-                adam@ry3.io,
+                adam@ry3.io
                 <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-slate-400"></span>
             
             </a>
