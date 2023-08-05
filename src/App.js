@@ -1,9 +1,9 @@
 import './App.css';
-import Project from './components/Project'
 import { useState, useEffect } from 'react'
 import ProjectsPanel from './components/ProjectsPanel';
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Description from './components/Description'
 function App() {
   let [projects, setProjects] = useState([])
   useEffect(() => {
@@ -22,8 +22,9 @@ function App() {
     fetchProjects()
   }, [])
   return (
-    <div>
+    <div className='bg-slate-100 font-mono p-4'>
       <Header />
+      <Description />
       <ProjectsPanel projects={projects} />
       <Footer />
     </div>

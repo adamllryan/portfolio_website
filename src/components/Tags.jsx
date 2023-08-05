@@ -3,7 +3,7 @@ import Tag from './Tag'
 
 const Tags = ( { tags } ) => {
   return (
-    <div>
+    <div className='flex flex-wrap p-1 px-2 gap-2 items-baseline'>
         {(tags.length > 0) ? 'Releases: ' : null}
         {
             tags.map((tag, index) => {
