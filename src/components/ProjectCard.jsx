@@ -26,9 +26,7 @@ const ProjectCard = ( { projectData } ) => {
             <div className='flex items-baseline gap-2 pl-2 rounded-t-lg'>
                 <a target='_blank' rel="noopener noreferrer" href={projectData.html_url}>
                     <FontAwesomeIcon className='text-indigo-500' icon={faGithub}/>
-                    <label className='m-16>'>
-                        {projectData.name}
-                    </label>
+                    {projectData.name}
                 </a>
                 <div className='text-indigo-500 text-xs shadow-xl'>
                     {projectData.language? `(${projectData.language})` : null}
