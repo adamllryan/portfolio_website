@@ -6,7 +6,7 @@ const ProjectsPanel = ( {projects} ) => {
         <div className='text-center p-2 m-2'>
             Projects
         </div>
-        <div className='flex flex-wrap rounded-xl'>
+        <div className='flex flex-wrap flex-stretch rounded-xl'>
             {
                 projects.length>0?
                     projects.sort((a, b) => {return new Date(b.created_at)-new Date(a.created_at)}).map((project, index) => {
