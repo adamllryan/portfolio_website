@@ -1,12 +1,9 @@
-import { React, useState } from 'react'
+import { React } from 'react'
 import ProjectCard from './ProjectCard'
 
 const ProjectsPanel = ( {projects, experience, classes} ) => {
-  let [panel, setPanel] = useState('project')
+  let panel = 'project'
 
-  const buttonOnClick = ( name ) => {
-    setPanel(name.toLowerCase())
-  }
   return (
     <div className='w-screen max-w-4xl shadow-xl rounded-md bg-slate-100 border-slate-200 border-2'> 
         <div className='text-center text-lg p-2 m-2 underline decoration-indigo-400'>
