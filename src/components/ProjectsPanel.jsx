@@ -2,8 +2,8 @@ import React from 'react'
 import Project from './Project'
 const ProjectsPanel = ( {projects} ) => {
   return (
-    <div className='w-screen max-w-4xl shadow-xl rounded-xl bg-slate-100 my-4 border-slate-200 border-2'> 
-        <div className='text-center p-2 m-2'>
+    <div className='w-screen max-w-4xl shadow-xl rounded-md bg-slate-100 border-slate-200 border-2'> 
+        <div className='text-center p-2 m-2 underline decoration-indigo-400'>
             Projects
         </div>
         <div className='flex flex-wrap flex-stretch rounded-xl'>
