@@ -18,7 +18,7 @@ const Header = () => {
                 <label className='ml-0.5'>
                     adam@ry3.io
                 </label>
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-slate-400"></span>
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-100 h-0.5 bg-slate-400"></span>
             </a>
             
             <a className='group transition duration-200 px-2' href='https://www.linkedin.com/in/adamllryan/'>
