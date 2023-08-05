@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='p-4 bg-slate-100 rounded-xl shadow-xl'>
+    <div className='p-4 bg-slate-100 rounded-xl shadow-xl border-slate-200 border-2'>
         {/* Title */}
         <div className='text-center'>
             Adam Ryan

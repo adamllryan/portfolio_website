@@ -2,7 +2,7 @@ import React from 'react'
 import Project from './Project'
 const ProjectsPanel = ( {projects} ) => {
   return (
-    <div className='shadow-xl rounded-xl bg-slate-100 my-4'> 
+    <div className='shadow-xl rounded-xl bg-slate-100 my-4 border-slate-200 border-2'> 
         <div className='text-center p-2 m-2'>
             Projects
         </div>
