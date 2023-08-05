@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className='w-screen max-w-4xl p-4 bg-slate-100 rounded-t-xl rounded-b-md shadow-xl border-slate-200 border-2'>
         {/* Title */}
-        <div className='text-center underline decoration-indigo-400'>
+        <div className='text-center text-xl underline decoration-indigo-400'>
             Adam Ryan
         </div>
         {/* Hyperinks */}
