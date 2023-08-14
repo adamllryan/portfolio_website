@@ -23,7 +23,7 @@ const ProjectCard = ( { projectData } ) => {
     return (
       <div className='z-50 justify-center align-middle content-center items-center'>
         <div className='border-2 hover:border-l-4 border-l-indigo-400 grid shadow-xl hover:shadow-2xl duration-300 hover:my-2.5 bg-slate-50  m-2 p-2 rounded-xl py-4 divide-y-2'>
-            <div className='flex items-baseline gap-2 pl-2 rounded-t-lg'>
+            <div className='flex items-baseline gap-2 pl-2 rounded-t-lg font-mono'>
                 <a target='_blank' rel="noopener noreferrer" href={projectData.html_url}>
                     <FontAwesomeIcon className='text-indigo-500' icon={faGithub}/>
                     {projectData.name}

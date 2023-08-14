@@ -22,7 +22,8 @@ function App() {
     fetchProjects()
   }, [])
   return (
-    <div className='grid bg-slate-50 font-mono p-4 place-items-center'>
+    <div className='grid bg-slate-50 font-sans p-4 place-items-center pattern-cross pattern-indigo-100 pattern-bg-white 
+    pattern-size-4 pattern-opacity-100 gap-y-0.5'>
       <Header />
       <Description />
       <ProjectsPanel projects={projects} />
