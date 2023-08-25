@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faPaperclip, faEnvelope} from '@fortawesome/free-solid-svg-icons'
-
+import File from '../resume.pdf'
 const Header = () => {
   return (
     <div className='w-screen max-w-4xl p-4 bg-slate-100 rounded-t-xl rounded-b-md shadow-xl border-slate-200 border-2'>
@@ -37,7 +37,7 @@ const Header = () => {
                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-slate-600"></span>
             </a>
             
-            <a className='group transition duration-200 px-2' href='null'>
+            <a className='group transition duration-200 px-2' href={File}>
                 <FontAwesomeIcon icon={faPaperclip} />
                 <label className='ml-0.5'>
                     Resume
