@@ -21,25 +21,25 @@ const ProjectCard = ( { projectData } ) => {
         fetchTags()
     }, [projectData.name])
     return (
-      <div className='z-50 justify-center align-middle content-center items-center'>
-        <div className='border-2 hover:border-l-4 border-l-indigo-400 grid shadow-xl hover:shadow-2xl duration-300 hover:my-2.5 bg-slate-50  m-2 p-2 rounded-xl py-4 divide-y-2'>
-            <div className='flex items-baseline gap-2 pl-2 rounded-t-lg font-mono'>
+      <div className='project__card'>
+        <div>
+            <div>
                 <a target='_blank' rel="noopener noreferrer" href={projectData.html_url}>
-                    <FontAwesomeIcon className='text-indigo-500' icon={faGithub}/>
+                    <FontAwesomeIcon icon={faGithub}/>
                     {projectData.name}
                 </a>
-                <div className='text-indigo-500 text-xs shadow-xl'>
+                <div>
                     {projectData.language? `(${projectData.language})` : null}
                 </div>
-                <div className='text-xs ml-auto pr-2'>
+                <div>
                     {new Date(projectData.created_at).getFullYear()}
                 </div>
             </div>
-            <div className='text-center'>
-                <div className='text-sm text-slate-600 py-2'>
+            <div>
+                <div>
                     {projectData.description ? projectData.description : 'No Description. '}
                 </div>
-                <div className='flex items-center justify-center divide-x text-sm shadow-sm bg-blend-hard-light rounded-md'>
+                <div>
                     <Tags tags={tags} />
                     <Topics topics={projectData.topics}/> 
                 </div>
