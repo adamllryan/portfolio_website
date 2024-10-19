@@ -50,7 +50,6 @@ html {
 .App {
     text-align: center;
     background-color: var(--white);
-    border: 1px solid var(--gray);
     font-family: 'Roboto', sans-serif;
     }
 
@@ -61,7 +60,6 @@ html {
 
 .page {
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
@@ -71,6 +69,12 @@ html {
 
 .intro {
     background-color: var(--white);
+    justify-content: center;
+    background: rgb(63,94,251);
+    background: -moz-radial-gradient(circle, var(--red), var(--red) 100%);
+    background: -webkit-radial-gradient(circle, var(--red) 0%, var(--white) 100%);
+    background: linear-gradient(185deg, var(--brown) 0%, var(--white) 10%, var(--white) 85%, var(--gray) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1);
 }
 
 .timeline {
@@ -120,6 +124,7 @@ html {
     color: var(--red);
     padding: 0rem 0.8rem;
     -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* Bio.css */
@@ -154,7 +159,6 @@ html {
 .project__card {
     display: inline-block;
     border: 1px solid #e1e4e8;
-    /* align left */
     text-align: left;
     z-index: 100;
 }
