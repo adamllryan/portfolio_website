@@ -70,7 +70,10 @@ function App() {
   const updateIntroVisual = () => {
     // shrinks as we scroll down
     let intro = document.querySelector(".intro");
-    intro.style.scale = Math.min(1 - document.documentElement.scrollTop / (2 * getVH()), 1);
+    intro.style.scale = Math.min(
+      1 - document.documentElement.scrollTop / (2 * getVH()),
+      1,
+    );
   };
 
   const updateTimelineScroll = () => {
@@ -79,18 +82,50 @@ function App() {
       timeline.scrollTop = 0;
     }
   };
+  // only add listener if not mobile
+  if (window.innerWidth > 600) {
+    window.onresize = function () {
+      updateArrowVisual();
+      updateWaveVisual();
+    };
 
-  window.onresize = function () {
-    updateArrowVisual();
-    updateWaveVisual();
-  };
+    window.onscroll = function () {
+      updateArrowVisual();
+      updateWaveVisual();
+      updateTimelineScroll();
+      updateIntroVisual();
+    };
+  } else {
+        //remove waves
+        let wave = document.querySelector(".bg-wave-1");
+        if (wave)
+            wave.style.display = "none";
+        // remove header img
+        let header = document.querySelector(".header__img");
+        if (header)
+            header.style.display = "none";
+        // set to flex column
+        let intro = document.querySelector(".intro");
+        if (intro)
+        intro.style.flexDirection = "column";
+        // set arrow bottom to 5vh
+        let arrow = document.querySelector(".scroll-arrow");
+        if (arrow)
+            arrow.style.bottom = "0vh";
+        // set project cards min width to 90vw
+        let projects = document.querySelectorAll(".project__card");
 
-  window.onscroll = function () {
-    updateArrowVisual();
-    updateWaveVisual();
-    updateTimelineScroll();
-    updateIntroVisual();
-  };
+        projects.forEach((project) => {
+            project.style.minWidth = "90vw";
+            project.style.maxWidth = "90vw";
+        });
+
+        // still reset scroll to top
+        window.onscroll = function () {
+            updateTimelineScroll();
+            updateIntroVisual();
+        };
+    }
 
   useEffect(() => {
     const fetchProjects = async () => {
