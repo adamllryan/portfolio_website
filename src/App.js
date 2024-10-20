@@ -10,6 +10,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 function App() {
   let [projects, setProjects] = useState([])
+
+    window.onscroll = function() {
+        let scrollArrow = document.querySelector('.scroll-arrow')
+        let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+        // make unclickable when not at top
+        
+        if (document.body.scrollTop < vh && document.documentElement.scrollTop < vh) {
+            
+            scrollArrow.style.display = 'block'
+        } else {
+            scrollArrow.style.display = 'none'
+            console.log('none')
+        }
+
+        // fade out
+        
+        scrollArrow.style.opacity = 1 - (document.documentElement.scrollTop / 200)
+        // shrink scale of bio as we scroll down
+        let intro = document.querySelector('.intro')
+
+        intro.style.scale = 1 - (document.documentElement.scrollTop / 2000)
+
+    }
+
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
