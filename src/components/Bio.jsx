@@ -13,7 +13,7 @@ const Bio = () => {
             </p>
             <p>
                     <FontAwesomeIcon icon={faGraduationCap} className="bio__icon" />
-                    Currently, I am a full-time student at the Ohio State University, pursuing a <b>Master's</b> degree in Computer Science & Engineering. I am involved in <b>research</b> in artificial intelligence in affiliation with Ohio State University and University of Illinois Urbana-Champagin. I am graduating in May, 2025.
+                    Currently, I am a full-time student at The Ohio State University, pursuing a <b>Master's</b> degree in Computer Science & Engineering. I am involved in <b>research</b> in artificial intelligence in affiliation with Ohio State University and University of Illinois Urbana-Champagin. I am graduating in May, 2025.
             </p>
             <p>
                     <FontAwesomeIcon icon={faBriefcase} className="bio__icon" />
