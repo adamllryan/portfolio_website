@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Timeline from "./components/Timeline";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Description from "./components/Description";
 import Bio from "./components/Bio";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,7 +25,6 @@ function App() {
 
   const updateArrowVisual = () => {
     let scrollArrow = document.querySelector(".scroll-arrow");
-    let arrowHeight = scrollArrow.offsetHeight;
     let maxHeight = getIntroBottomHeight();
     let vh = getVH();
     if (maxHeight >= 0.95 * vh) {
