@@ -50,7 +50,7 @@ html {
 .App {
     text-align: center;
     background-color: var(--white);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
     }
 
 .snap {
@@ -70,11 +70,6 @@ html {
 .intro {
     background-color: var(--white);
     justify-content: center;
-    background: rgb(63,94,251);
-    background: -moz-radial-gradient(circle, var(--red), var(--red) 100%);
-    background: -webkit-radial-gradient(circle, var(--red) 0%, var(--white) 100%);
-    background: linear-gradient(185deg, var(--brown) 0%, var(--white) 10%, var(--white) 85%, var(--gray) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1);
 }
 
 .timeline {
@@ -122,9 +117,8 @@ html {
 
 .header__reflink:hover {
     color: var(--red);
-    padding: 0rem 0.8rem;
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
 }
 
 /* Bio.css */
