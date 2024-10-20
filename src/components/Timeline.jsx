@@ -1,8 +1,8 @@
 import { React } from 'react'
 import ProjectCard from './ProjectCard'
-import SchoolCard from './EventCard'
-import ExperienceCard from './ExperienceCard'
-import EventCard from './EventCard'
+//import SchoolCard from './EventCard'
+//import ExperienceCard from './ExperienceCard'
+//import EventCard from './EventCard'
 
 const Timeline = ( {projects, experience, classes} ) => {
 
