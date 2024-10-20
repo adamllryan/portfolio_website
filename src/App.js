@@ -1,77 +1,101 @@
-import './App.css';
-import { useState, useEffect } from 'react';
-import ProjectsPanel from './components/ProjectsPanel';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Description from './components/Description';
-import Bio from './components/Bio';
+import "./App.css";
+import { useState, useEffect } from "react";
+import ProjectsPanel from "./components/ProjectsPanel";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Description from "./components/Description";
+import Bio from "./components/Bio";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 function App() {
-  let [projects, setProjects] = useState([])
+  let [projects, setProjects] = useState([]);
 
-    window.onscroll = function() {
-        let scrollArrow = document.querySelector('.scroll-arrow')
-        let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-        // make unclickable when not at top
-        
-        if (document.body.scrollTop < vh && document.documentElement.scrollTop < vh) {
-            
-            scrollArrow.style.display = 'block'
-        } else {
-            scrollArrow.style.display = 'none'
-            console.log('none')
-        }
-
-        // fade out
-        
-        scrollArrow.style.opacity = 1 - (document.documentElement.scrollTop / 200)
-        // shrink scale of bio as we scroll down
-        let intro = document.querySelector('.intro')
-
-        intro.style.scale = 1 - (document.documentElement.scrollTop / 2000)
-
+  window.onscroll = function () {
+    let scrollArrow = document.querySelector(".scroll-arrow");
+    let vh = Math.max(
+      document.documentElement.clientHeight || 0,
+      window.innerHeight || 0,
+    );
+    if (
+      document.body.scrollTop < 10 &&
+      document.documentElement.scrollTop < 10
+    ) {
+      scrollArrow.style.bottom = "20vh";
+    } else if (
+      document.body.scrollTop < vh &&
+      document.documentElement.scrollTop < vh
+    ) {
+      scrollArrow.style.display = "block";
+      scrollArrow.style.bottom = "5vh";
+    } else {
+      scrollArrow.style.display = "none";
+      scrollArrow.style.bottom = "5vh";
+      console.log("none");
     }
 
+    // fade out
+
+    scrollArrow.style.opacity = 1 - document.documentElement.scrollTop / 200;
+    // shrink scale of bio as we scroll down
+    let intro = document.querySelector(".intro");
+
+    intro.style.scale = 1 - document.documentElement.scrollTop / 2000;
+  };
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        let res = await fetch('https://api.github.com/users/adamllryan/repos?per_page=30')
+        let res = await fetch(
+          "https://api.github.com/users/adamllryan/repos?per_page=30",
+        );
         if (!res.ok) {
-          throw new Error(res.status)
+          throw new Error(res.status);
         }
-        setProjects(await res.json())
+        setProjects(await res.json());
       } catch (err) {
-        console.log(err)
-        return []
+        console.log(err);
+        return [];
       }
-    }
-    fetchProjects()
-  }, [])
+    };
+    fetchProjects();
+  }, []);
   return (
     <>
-        <div className="scroll-arrow">
-            <FontAwesomeIcon icon={faAngleDown} />
-        </div>
-        <div class="bg-wave-1">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-            </svg>
-        </div>
-        <div className="snap page intro">
-            <Header />
-            <Bio />
-        </div>
-        <div className="snap page timeline">
-            <ProjectsPanel projects={projects} />
-            <Footer />
-        </div>
-        
-
+      <div className="scroll-arrow">
+        <FontAwesomeIcon icon={faAngleDown} />
+      </div>
+      <div class="bg-wave-1">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".25"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".5"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+      <div className="snap page intro">
+        <Header />
+        <Bio />
+      </div>
+      <div className="snap page timeline">
+        <ProjectsPanel projects={projects} />
+        <Footer />
+      </div>
     </>
   );
 }
