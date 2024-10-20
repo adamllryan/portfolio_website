@@ -68,7 +68,7 @@ html {
 
 .intro {
   justify-content: center;
-    margin-right: 3%;
+  margin-right: 3%;
 }
 
 .timeline {
@@ -182,8 +182,8 @@ html {
   display: flex;
   flex-direction: column;
   border: 1px solid #e1e4e8;
-    min-width: 400px;
-    width: 50%;
+  min-width: 400px;
+  width: 50%;
 
   margin: 0 auto;
   padding: 1rem;
@@ -217,10 +217,51 @@ html {
 }
 
 .project__card__content {
+
 }
 
 .project__card__tags {
+    border-top: 1px solid #e1e4e8;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
 }
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tags__tag {
+    margin-right: 0.5rem;
+}
+
+
+.tags__tag:not(:last-child)::after {
+    content: ", ";
+}
+
+.tags__tag:first-child {
+    margin-left: 0.5rem;
+}
+
+.releases {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.releases__release {
+}
+
+.releases__release:not(:last-child)::after {
+    content: ", ";
+}
+
+.releases__release:first-child {
+    margin-left: 0.5rem;
+}
+
 
 .project__card__description {
 }

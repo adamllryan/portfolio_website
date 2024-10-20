@@ -2,7 +2,7 @@ import React from 'react'
 import Topic from './Topic'
 const Topics = ( {topics} ) => {
   return (
-    <div className='flex flex-wrap p-1 px-2 gap-2 items-baseline'>
+    <div className='tags'>
         
         {topics.length>0?'Topics: ':null}
         {
