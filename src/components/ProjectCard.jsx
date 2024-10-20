@@ -22,29 +22,27 @@ const ProjectCard = ( { projectData } ) => {
     }, [projectData.name])
     return (
       <div className='project__card'>
-        <div>
-            <div>
-                <a target='_blank' rel="noopener noreferrer" href={projectData.html_url}>
-                    <FontAwesomeIcon icon={faGithub}/>
+            <div className='project__card__header'>
+                <a target='_blank' rel="noopener noreferrer" href={projectData.html_url} className='project__card__title'>
+                    <FontAwesomeIcon icon={faGithub} style={{marginRight: '15px'}}/>
                     {projectData.name}
                 </a>
-                <div>
+                <div className='project__card__language'>
                     {projectData.language? `(${projectData.language})` : null}
                 </div>
-                <div>
+                <div className='project__card__date'>
                     {new Date(projectData.created_at).getFullYear()}
                 </div>
             </div>
-            <div>
-                <div>
+            <div className='project__card__content'>
+                <div className='project__card__description'>
                     {projectData.description ? projectData.description : 'No Description. '}
                 </div>
-                <div>
+                <div className='project__card__tags'>
                     <Tags tags={tags} />
                     <Topics topics={projectData.topics}/> 
                 </div>
             </div>
-        </div>
       </div>
 
     )

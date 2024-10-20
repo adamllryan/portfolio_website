@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import ProjectsPanel from "./components/ProjectsPanel";
+import Timeline from "./components/Timeline";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Description from "./components/Description";
@@ -41,7 +41,7 @@ function App() {
       scrollArrow.style.bottom = "5vh";
     } else if (
       document.body.scrollTop < 10 &&
-      document.documentElement.scrollTop < 10
+      document.documentElement.scrollTop < 50 
     ) {
       // When big enough and at the top of the page, we need to set the arrow to 20vh so the arrow is more visible
       console.log("Setting arrow to 20vh: at top");
@@ -55,16 +55,36 @@ function App() {
       console.log("Setting arrow to 5vh and fading: scrolling");
       scrollArrow.style.display = "block";
       scrollArrow.style.bottom = "5vh";
+    }
       scrollArrow.style.opacity = 1 - document.documentElement.scrollTop / 200;
+  };
+
+  const updateWaveVisual = () => {
+    let wave = document.querySelector(".bg-wave-1");
+    // Simpler than arrow, just move it to 105vh if user scrolls
+    if (document.documentElement.scrollTop > 10) {
+      wave.style.bottom = "-14vh";
+    } else {
+      wave.style.bottom = "0vh";
     }
   };
 
+    const updateTimelineScroll = () => {
+        let timeline = document.querySelector(".timeline");
+        if (document.documentElement.scrollTop < 10) {
+            timeline.scrollTop = 0;
+        }
+    }
+
   window.onresize = function () {
     updateArrowVisual();
+    updateWaveVisual();
   };
 
   window.onscroll = function () {
     updateArrowVisual();
+    updateWaveVisual();
+    updateTimelineScroll();
   };
 
   useEffect(() => {
@@ -117,7 +137,7 @@ function App() {
         <Bio />
       </div>
       <div className="snap page timeline">
-        <ProjectsPanel projects={projects} />
+        <Timeline projects={projects} />
         <Footer />
       </div>
     </>
