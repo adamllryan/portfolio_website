@@ -200,7 +200,7 @@ html {
 
 .project__card__header {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 1rem;
   width: 100%;
   border-bottom: 1px solid #e1e4e8;
