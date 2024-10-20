@@ -10,37 +10,61 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 function App() {
   let [projects, setProjects] = useState([]);
-
-  window.onscroll = function () {
-    let scrollArrow = document.querySelector(".scroll-arrow");
-    let vh = Math.max(
+  const getVH = () => {
+    return Math.max(
       document.documentElement.clientHeight || 0,
       window.innerHeight || 0,
     );
-    if (
+  };
+  const getIntroBottomHeight = () => {
+    let vh = getVH();
+    let bioBottom = vh / 2 + document.querySelector(".bio").offsetHeight / 2;
+    let headerBottom =
+      vh / 2 + document.querySelector(".header").offsetHeight / 2;
+    return Math.max(bioBottom, headerBottom);
+  };
+
+  const updateArrowVisual = () => {
+    let scrollArrow = document.querySelector(".scroll-arrow");
+    let arrowHeight = scrollArrow.offsetHeight;
+    let maxHeight = getIntroBottomHeight();
+    let vh = getVH();
+    if (maxHeight >= 0.95 * vh) {
+      // if bottom of bio or header is greater than 5% of the viewport height, we need to disable the arrow
+      console.log("Removing arrow: too small" + maxHeight + " " + vh);
+      scrollArrow.style.bottom = "5vh";
+      scrollArrow.style.display = "none";
+    } else if (maxHeight > 0.75 * vh) {
+      // if bottom of bio or header is greater than 20% of the viewport height, we need to force 5vh
+      console.log("Forcing arrow to 5vh: too small " + maxHeight + " " + vh);
+      scrollArrow.style.display = "block";
+      scrollArrow.style.bottom = "5vh";
+    } else if (
       document.body.scrollTop < 10 &&
       document.documentElement.scrollTop < 10
     ) {
+      // When big enough and at the top of the page, we need to set the arrow to 20vh so the arrow is more visible
+      console.log("Setting arrow to 20vh: at top");
+      scrollArrow.style.display = "block";
       scrollArrow.style.bottom = "20vh";
     } else if (
       document.body.scrollTop < vh &&
       document.documentElement.scrollTop < vh
     ) {
+      // When big enough and the user starts scrolling, set the arrow to 5vh for fun, and begin to fade opacity
+      console.log("Setting arrow to 5vh and fading: scrolling");
       scrollArrow.style.display = "block";
       scrollArrow.style.bottom = "5vh";
-    } else {
-      scrollArrow.style.display = "none";
-      scrollArrow.style.bottom = "5vh";
-      console.log("none");
+      scrollArrow.style.opacity = 1 - document.documentElement.scrollTop / 200;
     }
+  };
 
-    // fade out
+  window.onresize = function () {
+    updateArrowVisual();
+  };
 
-    scrollArrow.style.opacity = 1 - document.documentElement.scrollTop / 200;
-    // shrink scale of bio as we scroll down
-    let intro = document.querySelector(".intro");
-
-    intro.style.scale = 1 - document.documentElement.scrollTop / 2000;
+  window.onscroll = function () {
+    updateArrowVisual();
   };
 
   useEffect(() => {
