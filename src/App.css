@@ -296,7 +296,28 @@ transition: bottom 0.5s ease-in-out;
 }
 
 .footer {
-  width: 100%;
-  margin: 25%;
-  border: 1px solid red;
+    margin-bottom: 1rem;
+    color: var(--white);
 }
+
+.footer a {
+    color: var(--true_white);
+    margin: 0.5rem;
+}
+
+.gitfail {
+    color: var(--white);
+    
+    /* center the text */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 0.25rem;
+}
+
+.gitfail a {
+    color: var(--true_white);
+}
+

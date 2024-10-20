@@ -18,7 +18,7 @@ const Timeline = ( {projects, experience, classes} ) => {
                 return <ProjectCard key={index} projectData={project} className="timeline__card"/>
                 })
             :
-                <div>Failed to fetch repos, you may be rate limited by Github. All projects can be viewed at <a className='underline' href='https://www.github.com/adamllryan'>github.com/adamllryan</a>. </div>
+                <div className='gitfail'>There was an issue fetching GitHub repos (rate limit). All projects may be viewed at <a className='underline' href='https://www.github.com/adamllryan'>github.com/adamllryan</a>. </div>
         }
     </>
   )
