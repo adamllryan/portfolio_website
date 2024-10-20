@@ -5,8 +5,8 @@ import { faGraduationCap, faBriefcase, faCode } from '@fortawesome/free-solid-sv
 
 const Bio = () => {
   return (
-    <div class="bio">
-        <div class="bio__content">
+    <div className="bio">
+        <div className="bio__content">
             <p>
                     <FontAwesomeIcon icon={faCode} className="bio__icon" />
                     As a software engineer, I bring a comprehensive background in computer science, specializing in <b>machine learning</b>, <b>full-stack</b> development, and automation. I also enjoy working in networking and <b>embedded</b> systems. 
