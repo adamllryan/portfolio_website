@@ -39,7 +39,7 @@ function App() {
       scrollArrow.style.bottom = "5vh";
     } else if (
       document.body.scrollTop < 10 &&
-      document.documentElement.scrollTop < 50 
+      document.documentElement.scrollTop < 50
     ) {
       // When big enough and at the top of the page, we need to set the arrow to 20vh so the arrow is more visible
       console.log("Setting arrow to 20vh: at top");
@@ -54,7 +54,7 @@ function App() {
       scrollArrow.style.display = "block";
       scrollArrow.style.bottom = "5vh";
     }
-      scrollArrow.style.opacity = 1 - document.documentElement.scrollTop / 200;
+    scrollArrow.style.opacity = 1 - document.documentElement.scrollTop / 200;
   };
 
   const updateWaveVisual = () => {
@@ -67,12 +67,18 @@ function App() {
     }
   };
 
-    const updateTimelineScroll = () => {
-        let timeline = document.querySelector(".timeline");
-        if (document.documentElement.scrollTop < 10) {
-            timeline.scrollTop = 0;
-        }
+  const updateIntroVisual = () => {
+    // shrinks as we scroll down
+    let intro = document.querySelector(".intro");
+    intro.style.scale = Math.min(1 - document.documentElement.scrollTop / (2 * getVH()), 1);
+  };
+
+  const updateTimelineScroll = () => {
+    let timeline = document.querySelector(".timeline");
+    if (document.documentElement.scrollTop < 10) {
+      timeline.scrollTop = 0;
     }
+  };
 
   window.onresize = function () {
     updateArrowVisual();
@@ -83,6 +89,7 @@ function App() {
     updateArrowVisual();
     updateWaveVisual();
     updateTimelineScroll();
+    updateIntroVisual();
   };
 
   useEffect(() => {
