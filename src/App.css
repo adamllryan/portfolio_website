@@ -96,6 +96,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+    z-index: 100;
 }
 
 .header__title {
@@ -103,11 +104,13 @@ html {
   color: white;
   background-color: var(--red);
   padding: 0.75rem;
+    z-index: 100;
 }
 
 .header__img {
   width: 181px;
   object-fit: cover;
+    z-index: 100;
 }
 
 .header__reflink {
@@ -141,6 +144,7 @@ html {
   color: var(--black);
   text-align: justify;
   font-weight: 300;
+    z-index: 100;
 }
 
 .bio__content b {
@@ -150,6 +154,7 @@ html {
 .bio__icon {
   color: var(--red);
   padding-right: 1rem;
+    z-index: 100;
 }
 
 /* Project Stuff */
@@ -183,6 +188,7 @@ html {
   flex-direction: column;
   border: 1px solid #e1e4e8;
   min-width: 400px;
+    max-width: 600px;
   width: 50%;
 
   margin: 0 auto;
@@ -274,8 +280,8 @@ html {
   line-height: 0;
   transform: rotate(180deg);
   background-color: var(--off_white);
-  transition: all 0.5s ease-in-out;
-  height: 15vh;
+transition: bottom 0.5s ease-in-out;
+  height: 150px;
   z-index: 1;
 }
 
