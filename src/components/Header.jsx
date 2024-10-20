@@ -6,6 +6,7 @@ import File from '../resume.pdf'
 const Header = () => {
   return (
     <div className='header'>
+        <img src='polygons.png' alt='polygons' className='header__img'/>
         <div className='header__title'>
             Adam Ryan
         </div>
