@@ -64,11 +64,11 @@ html {
   display: flex;
   align-items: center;
   height: 100vh;
-  width: 100%;
 }
 
 .intro {
   justify-content: center;
+    margin-right: 3%;
 }
 
 .timeline {
@@ -182,7 +182,9 @@ html {
   display: flex;
   flex-direction: column;
   border: 1px solid #e1e4e8;
-  width: 75%;
+    min-width: 400px;
+    width: 50%;
+
   margin: 0 auto;
   padding: 1rem;
   background-color: var(--off_white);
