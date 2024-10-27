@@ -1,0 +1,40 @@
+{
+  "history": [
+    {
+      "title": "Team Member",
+      "employer": "Farinacci Pizza",
+      "start": "04-2019",
+      "end": "08-2021",
+      "hidden": true
+    },
+    {
+      "title": "IT Systems Student Assistant",
+      "employer": "The Ohio State University - College of Arts and Sciences",
+      "start": "11-2021",
+      "end": "05-2022"
+    },
+    {
+      "title": "Software Developer",
+      "employer": "RxGames",
+      "start": "05-2022",
+      "end": "08-2023"
+    },
+    {
+      "title": "CSE Research Assistant",
+      "employer": "The Ohio State University - College of Engineering",
+      "start": "08-2023",
+      "end": "05-2024"
+    },
+    {
+      "title": "Fullstack Software Engineer Intern",
+      "employer": "Fidelity Investments",
+      "start": "06-2024",
+      "end": "08-2024"
+    },
+    {
+      "title": "Associate Software Engineer",
+      "employer": "Fidelity Investments",
+      "start": "06-2025"
+    }
+  ]
+}

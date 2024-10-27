@@ -31,12 +31,12 @@ function App() {
       let vh = getVH();
       if (maxHeight >= 0.95 * vh) {
         // if bottom of bio or header is greater than 5% of the viewport height, we need to disable the arrow
-        console.log("Removing arrow: too small" + maxHeight + " " + vh);
+        //console.log("Removing arrow: too small" + maxHeight + " " + vh);
         scrollArrow.style.bottom = "5vh";
         scrollArrow.style.display = "none";
       } else if (maxHeight > 0.75 * vh) {
         // if bottom of bio or header is greater than 20% of the viewport height, we need to force 5vh
-        console.log("Forcing arrow to 5vh: too small " + maxHeight + " " + vh);
+        //console.log("Forcing arrow to 5vh: too small " + maxHeight + " " + vh);
         scrollArrow.style.display = "block";
         scrollArrow.style.bottom = "5vh";
       } else if (
@@ -44,7 +44,7 @@ function App() {
         document.documentElement.scrollTop < 50
       ) {
         // When big enough and at the top of the page, we need to set the arrow to 20vh so the arrow is more visible
-        console.log("Setting arrow to 20vh: at top");
+        //console.log("Setting arrow to 20vh: at top");
         scrollArrow.style.display = "block";
         scrollArrow.style.bottom = "20vh";
       } else if (
@@ -52,7 +52,7 @@ function App() {
         document.documentElement.scrollTop < vh
       ) {
         // When big enough and the user starts scrolling, set the arrow to 5vh for fun, and begin to fade opacity
-        console.log("Setting arrow to 5vh and fading: scrolling");
+        //console.log("Setting arrow to 5vh and fading: scrolling");
         scrollArrow.style.display = "block";
         scrollArrow.style.bottom = "5vh";
       }

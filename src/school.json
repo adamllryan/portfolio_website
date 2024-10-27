@@ -1,0 +1,18 @@
+{
+  "history": [
+    {
+      "school": "The Ohio State University",
+      "degree": "Bachelor of Science",
+      "major": "Computer Science and Engineering",
+      "start": "08-2021",
+      "end": "05-2024"
+    },
+    {
+      "school": "The Ohio State University",
+      "degree": "Master of Science",
+      "major": "Computer Science and Engineering",
+      "start": "08-2024",
+      "end": "05-2025"
+    }
+  ]
+}

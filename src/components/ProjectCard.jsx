@@ -21,7 +21,7 @@ const ProjectCard = ( { projectData } ) => {
         fetchTags()
     }, [projectData.name])
     return (
-      <div className='project__card'>
+      <div className='timeline__card project__card'>
             <div className='project__card__header'>
                 <a target='_blank' rel="noopener noreferrer" href={projectData.html_url} className='project__card__title'>
                     <FontAwesomeIcon icon={faGithub} style={{marginRight: '15px'}}/>
