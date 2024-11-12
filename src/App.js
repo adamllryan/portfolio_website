@@ -88,7 +88,6 @@ function App() {
     const updateListeners = () => {
       // only add listener if not mobile
       if (window.innerWidth > 768) {
-        console.log("Adding listeners");
         window.onresize = function () {
           updateArrowVisual();
           updateWaveVisual();
